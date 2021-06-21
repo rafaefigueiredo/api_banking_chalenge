@@ -7,5 +7,9 @@ defmodule ApiBankingChalengeWeb.Router do
 
   scope "/api", ApiBankingChalengeWeb do
     pipe_through :api
+
+    get "/posts", PostsController, :list
+    post "posts", PostsController, :create
+    get "/posts/:id", PostsController, :show
   end
 end
